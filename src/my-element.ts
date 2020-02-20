@@ -16,6 +16,9 @@ export class MyElement extends LitElement {
   @property()
   message = "No message! :-(";
 
+  @property({ type: Boolean })
+  clicked = false;
+
   static get styles() {
     return css`
       div {
@@ -26,8 +29,13 @@ export class MyElement extends LitElement {
         border-radius: 4px;
         margin: 10px;
         padding: 10px;
+        cursor: pointer;
       }
     `;
+  }
+
+  handleClick() {
+    this.clicked = !this.clicked;
   }
 
   /**
@@ -39,7 +47,14 @@ export class MyElement extends LitElement {
      * the element template.
      */
     return html`
-      <div>${this.message}</div>
+      <div @click="${this.handleClick}">${this.message}</div>
+      ${this.clicked
+        ? html`
+            <span>You clicked!</span>
+          `
+        : html`
+            <span>← Click here!</span>
+          `}
     `;
   }
 }
