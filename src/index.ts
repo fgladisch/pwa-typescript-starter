@@ -1,31 +1,11 @@
-/**
- * Import LitElement base class, html helper function,
- * and TypeScript decorators
- **/
-import { LitElement, html, customElement, property } from "lit-element";
+import { LitElement, html, customElement } from "lit-element";
+import "./my-element";
 
-/**
- * Use the customElement decorator to define your class as
- * a custom element. Registers <my-element> as an HTML tag.
- */
-@customElement("my-element")
-export class MyElement extends LitElement {
-  /**
-   * Create an observed property. Triggers update on change.
-   */
-  @property()
-  foo = "foo";
-
-  /**
-   * Implement `render` to define a template for your element.
-   */
+@customElement("my-app")
+export class MyApp extends LitElement {
   render() {
-    /**
-     * Use JavaScript expressions to include property values in
-     * the element template.
-     */
     return html`
-      <p>${this.foo}</p>
+      <my-element message="LitElement rocks!"></my-element>
     `;
   }
 }
