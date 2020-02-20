@@ -1,0 +1,14 @@
+{
+  "shell": "dist/index.js",
+  "entrypoint": "index.html",
+  "npm": true,
+  "moduleResolution": "node",
+  "sources": ["dist/**/*.js", "manifest.json", "manifest/**", "package.json"],
+  "extraDependencies": ["node_modules/@webcomponents/webcomponentsjs/**"],
+  "builds": [
+    {
+      "addServiceWorker": true,
+      "addPushManifest": true
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "lit-playground",
+  "version": "0.1.0",
+  "description": "Lit element example project",
+  "main": "dist/index.js",
+  "author": "Felix A. Gladisch <felix@felixgladisch.de>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently 'npm run compile:watch' 'polymer serve'",
+    "build": "npm run compile && polymer build",
+    "compile": "tsc",
+    "compile:watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.4.1",
+    "lit-element": "^2.2.1",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "polymer-cli": "^1.9.11"
+  }
+}
